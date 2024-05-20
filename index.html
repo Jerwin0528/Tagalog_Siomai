@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siomai Rice</title>
+    <link rel="shortcut icon" type="image" href="siomai.jpg">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Uchen', serif;
+    }
+    .all-content{
+        background: #2e1700;
+    }
+    #navbar{
+        background-color: #573818;
+        padding-left: 60px;
+        font-weight: bold;
+    }
+    #logo{
+        font-size: 23px;
+        color: white;
+    }
+    #logo img{
+        margin-bottom: 15px;
+    }
+    .navbar-nav{
+        margin-left: 10px;
+    }
+    .nav-link{
+        color: white;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px black;
+        margin-left: 15px;
+        transition: 0.5s ease;
+    }
+    .nav-link:hover{
+        background-color: rgba(161,109,14,1);
+        color: white;
+        border-radius: 5px;
+    }
+    .icons{
+        margin-left: 30px;
+    }
+    .icons img{
+        margin-left: 10px;
+        transition: 0.5s ease;
+        cursor: pointer;
+    }
+    .icons img:hover{
+        transform: translateY(-5px);
+    }
+    @media screen and (max-width:330px){
+        #logo{
+            font-size: 15px;
+        }
+    }
+    .home{
+        width: 100%;
+        height: 88.5vh;
+        display: flex;
+        background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(./image/background2.png);
+        background-size: cover;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 0;
+    }
+    .home .img{
+        flex: 1 1 400px;
+    }
+    .home .img img{
+        width: 100%;
+    }
+    .home .content{
+        flex: 1 1 400px;
+        margin-left: 60px;
+    }
+    .content h3{
+        color: white;
+        font-size: 60px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px black;
+    }
+    .content h2{
+        font-size: 60px;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+        font-weight: bold;
+    }
+    .changecontent::after{
+        content: ' ';
+        color: rgba(161,109,14,1);
+        animation: changetext 10s infinite linear;
+        font-weight: bold;
+    }
+    @keyframes changetext{
+        0%{content: "SIOMAI RICE";}
+        20%{content: "Sharks Fin";}
+        50%{content: "Beef Siomai";}
+        60%{content: "Pork Siomai";}
+        80%{content: "Chicken Siomai";}
+        100%{content: "Japanese Siomai";}
+    }
+    .content p{
+        color: white;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px black;
+    }
+    .content .btn{
+        width: 110px;
+        height: 38px;
+        background-color: #573818;
+        color: white;
+    }
+    @media screen and (max-width:800px){
+        .content h3{
+            font-size: 50px;
+        }
+    }
+    @media screen and (max-width:860px){
+        .home{
+            height: 120vh;
+        }
+    }
+    @media screen and (max-width:560px){
+        .home{
+            height: 100vh;
+        }
+    }
+    @media screen and (max-width:330px){
+        .content h2{
+            font-size: 30px;
+        }
+        .content h3{
+            font-size: 30px;
+        }
+    }
+    #box{
+        margin-top: 50px;
+    }
+    #box .card{
+        box-shadow: 0px 0px 5px black;
+        margin-top: 10px;
+        transition: 0.5s ease;
+        cursor: pointer;
+    }
+    #box .card:hover{
+        transform: translateY(-10px);
+    }
+    /* top cards end */
+    /* banner */
+    .banner{
+        width: 100%;
+        height: 60vh;
+        display: flex;
+        background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(./image/banner2.png);
+        background-size: cover;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        box-shadow: 0px 0px 10px black;
+        margin-top: 50px;
+    }
+    .banner .img{
+        flex: 1 1 400px;
+    }
+    .banner .img img{
+        width: 100%;
+    }
+    .banner .content{
+        flex: 1 1 400px;
+        margin-left: 60px;
+        margin-top: 60px;
+    }
+    .banner .content h3{
+        color: rgba(161,109,14,1);
+        font-weight: bold;
+    }
+    .banner .content h2{
+        font-size: 50px;
+        color: rgba(161,109,14,1);
+        font-weight: bold;
+        text-shadow: 1px 1px 1px black;
+    }
+    .banner .content p{
+        color: rgba(161,109,14,1);
+    }
+    #btnorder button{
+        width: 150px;
+        height: 32px;
+        letter-spacing: 5px;
+        background-color: rgba(161,109,14,1);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    @media screen and (max-width:800px){
+        .banner .content h3{
+            font-size: 50px;
+        }
+    }
+    @media screen and (max-width:855px){
+        .banner{
+            height: 100vh;
+        }
+    }
+    
+    #product-cards h1{
+        text-align: center;
+        font-weight: bold;
+        margin-top: 50px;
+        color: rgba(161,109,14,1);
+        text-shadow: 1px 1px 1px black;
+        border-bottom: 2px solid rgba(161,109,14,1);
+    }
+    #product-cards .card{
+        background-color: rgba(161,109,14,1);
+        box-shadow: 0 0 3px black;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .overlay{
+        display: block;
+        opacity: 0;
+        position: absolute;
+        top: 10%;
+        margin-left: 0;
+        width: 70px;
+    }
+    #product-cards .card:hover .overlay{
+        opacity: 1;
+        margin-left: 5%;
+        transition: 0.5s ease;
+    }
+    .overlay i img{
+        background-color: #2e1700;
+        height: 30px;
+        width: 30px;
+        font-size: 20px;
+        padding: 7px;
+        margin: -20%;
+        margin-bottom: 5%;
+        cursor: pointer;
+    }
+    .overlay .btn-secondary{
+        background: transparent !important;
+        border: none;
+        box-shadow: none;
+    }
+    #product-cards h3{
+        color: white;
+        text-shadow: 1px 1px 1px black;
+    }
+    .star .checked{
+         color: yellow;
+    }
+    #product-cards p{
+        color: #2e1700;
+        font-weight: bold;
+    }
+    #product-cards h6{
+        font-size: 20px;
+        color: #2e1700;
+        font-weight: bold;
+    }
+    #product-cards h6 span button{
+        width: 100px;
+        height: 26px;
+        font-size: 15px;
+        background: transparent;
+        letter-spacing: 3px;
+        border: 2px solid #573818;
+        border-radius: 5px;
+        float: right;
+        font-weight: bold;
+        transition: 0.5s ease;
+        cursor: pointer;
+    }
+    #product-cards h6 span button:hover{
+        background-color: #2e1700;
+        color: white;
+    }
+    
+    /* product cards end */
+    
+    /* gallary */
+    #gallary{
+        margin-top: 50px;
+    }
+    #gallary h1{
+        text-align: center;
+        font-weight: bold;
+        margin-top: 50px;
+        color: rgba(161,109,14,1);
+        text-shadow: 1px 1px 1px black;
+        border-bottom: 2px solid rgba(161,109,14,1);
+    }
+    #gallary .card{
+        box-shadow: 3px 3px 3px black;
+        cursor: pointer;
+    }
+    #gallary .overlay{
+        opacity: 0;
+        width: 100%;
+        color: white;
+        text-shadow: 1px 1px 1px black;
+    }
+    #gallary .card:hover .overlay{
+        opacity: 5;
+        margin-top: 20%;
+        transition: 0.5s ease;
+    }
+    /* gallary */
+    
+    /* about */
+    #about{
+        margin-top: 50px;
+    }
+    #about h1{
+        text-align: center;
+        font-weight: bold;
+        margin-top: 50px;
+        color: rgba(161,109,14,1);
+        text-shadow: 1px 1px 1px black;
+        border-bottom: 2px solid rgba(161,109,14,1);
+    }
+    #about .card{
+        background-color: rgba(161,109,14,1);
+        box-shadow: 0px 0px 5px black;
+    }
+    #about p{
+        color: rgba(161,109,14,1);
+        text-shadow: 1px 1px 1px black;
+        font-weight: bold;
+    }
+    #bt button{
+        width: 150px;
+        height: 32px;
+        letter-spacing: 3px;
+        background-color: rgba(161,109,14,1);
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+    @media screen and (max-width:1000px){
+        #about p{
+            font-size: 10px;
+        }
+    }
+    @media screen and (max-width:760px){
+        #about p{
+            font-size: 20px;
+        }
+    }
+    /* about */
+    
+    /* contact */
+    #contact{
+        margin-top: 100px;
+    }
+    #contact h1{
+        text-align: center;
+        font-weight: bold;
+        margin-top: 50px;
+        color: rgba(161,109,14,1);
+        text-shadow: 1px 1px 1px black;
+        border-bottom: 2px solid rgba(161,109,14,1);
+    }
+    #contact input{
+        background-color: rgba(161,109,14,1);
+    }
+    #contact input::placeholder{
+        color: white;
+    }
+    #contact textarea{
+        background-color: rgba(161,109,14,1);
+    }
+    #contact textarea::placeholder{
+        color: white;
+    }
+    #messagebtn{
+        text-align: center;
+    }
+    #messagebtn button{
+        width: 200px;
+        height: 30px;
+        letter-spacing: 3px;
+        font-weight: bold;
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    #messagebtn button:hover{
+        background-color: rgba(161,109,14,1);
+    }
+    #footer{
+        width: 100%;    
+        background-color: #573818;
+        box-shadow: 0px 0px 5px black;
+        margin-top: 100px;
+    }
+    #footer h1{
+        color: white;
+        padding-top: 30px;
+    }
+    #footer p{
+        color: white;
+    }
+    .icons i{
+        background-color: white;
+        color: #573818;
+        border-radius: 50px;
+        padding: 6px;
+        font-size: 30px;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    .icons i:hover{
+        background-color: rgba(161,109,14,1);
+        color: white;
+    }
+    .copyright{
+        color: white;
+        margin-top: 20px;
+    }
+    .credite{
+        color: white;
+    }
+    /* footer */
+    html{
+        scroll-behavior: smooth;
+    }
+    .arrow{
+        position: fixed;
+        background-color: rgba(161,109,14,1);
+        border-radius: 50px;
+        height: 50px;
+        bottom: 40px;
+        right: 50px;
+        text-decoration: none;
+        text-align: center;
+        line-height: 50px;
+    }</style>
+</head>
+<body>
+    <div class="all-content">
+        <nav class="navbar navbar-expand-md" id="navbar">
+            <a class="navbar-brand" href="#" id="logo"><img src="" alt="" width="50px">Siomai Rice</a>
+          
+            
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span><img src="icon.jpg" alt="" width="30px"></span>
+            </button>
+          
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Home</a>
+                </li>
+                <!-- dropdown -->
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                     Category
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Fried Siomai</a>
+                        <a href="#" class="dropdown-item">Steamed Sioami</a>
+                        <a href="#" class="dropdown-item">Sharks Fin</a>
+                        <a href="#" class="dropdown-item">Beef Siomai</a>
+                        <a href="#" class="dropdown-item">Pork Siomai</a>
+                    </div>
+                </li>
+                <!-- dropdown -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Gallery</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="icons">
+                <img src="./image/user.png" alt="" width="20px">
+                <img src="./image/heart.png" alt="" width="20px">
+                <img src="./image/add.png" alt="" width="24px">
+            </div>
+          </nav>
+        <!-- navbar end -->
+      
+
+
+        <!-- home section -->
+        <div class="home">
+            <div class="content" data-aos="zoom-out-right">
+                <h3>Delicious
+                    <br>Siomai Rice
+                </h3>
+                <h2>On The Road <span class="changecontent"></span></h2>
+                <p>Welcome to the home of savory satisfaction, where every bite is a journey into savory perfection. At Siomai On The Road, we take pride in crafting the ultimate comfort food: Siomai Rice. Our delicious combination of succulent siomai and fluffy rice promises to tantalize your taste buds and leave you craving for more. Join us as we explore the delightful world of Siomai Rice and why it's the perfect choice for your next meal.
+                </p>
+                <a href="#" class="btn">Order Now</a>
+            </div>
+            <div class="img"  data-aos="zoom-out-left">
+                <img src="siomaii.png" alt="">
+            </div>
+        </div>
+      <div class="container" id="box"    data-aos="fade-up"
+      data-aos-duration="1500">
+        <div class="row">
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="./image/box1.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="./image/box2.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-4 py-3 py-md-0">
+                <div class="card">
+                    <img src="./image/box3.jpg" alt="">
+                </div>
+            </div>
+        </div>
+      </div>
+        <div class="banner"    data-aos="fade-up"
+        data-aos-duration="1500">
+            <div class="content">
+                <h3>Savory Siomai Rice</h3>
+                <h2>Starting Price of ₱35</h2>
+                <p>have a delicious and savory siomai rice for only ₱35.</p>
+                <div id="btnorder"><button>Order Now</button></div>
+            </div>
+            <div class="img">
+                <img src="img1.png" alt="">
+            </div>
+        </div>
+      <section id="product-cards"    data-aos="fade-up"
+      data-aos-duration="1500">
+        <div class="container">
+            <h1>SIOMAI ON THE ROAD</h1>
+            <div class="row" style="margin-top:50px;">
+               <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="img3.jpg" alt="">
+                    <div class="card-body">
+                        <h3>Beef Siomai</h3>
+                        <div class="star">
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star "></i>
+                          <i class="bx bxs-star "></i>
+                        </div>
+                        <h6>₱35<span><button>Add Cart</button></span></h6>
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="img2.jpg" alt="">
+                    <div class="card-body">
+                        <h3>Pork Siomai</h3>
+                        <h6>₱35<span><button>Add Cart</button></span></h6>
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="img5.jpg" alt="">
+                    <div class="card-body">
+                        <h3>Japanese Siomai</h3>
+                        </div>
+                        <h6>₱35<span><button>Add Cart</button></span></h6>
+                    </div>
+                </div>
+               </div>
+               <div class="col-md-3 py-3 py-md-0">
+                <div class="card">
+                    <img src="image6.jpg" alt="">
+                    <div class="card-body">
+                        <h3>Sharks Fin</h3>
+                        <div class="star">
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                          <i class="bx bxs-star checked"></i>
+                        </div>
+                        <h6>₱35 <span><button>Add Cart</button></span></h6>
+                    </div>
+                </div>
+               </div>
+            </div>
+
+
+
+
+      <section id="product-cards"    data-aos="fade-up"
+      data-aos-duration="1500">
+        <div class="container">
+            <h1>SIDES</h1>
+            <div class="row" style="margin-top: 50px;">
+                <div class="col-md-3 py-3 py-md-0">
+                    <div class="card">
+                        <div class="overlay">
+                            <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="" width="30px"></i></button>
+                            <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="" width="30px"></i></button>
+                             <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./image/add.png" alt="" width="30px"></i></button>
+                        </div>
+                        <img src="IMG9.png" alt="">
+                        <div class="card-body">
+                            <h3>PALAMIG</h3>
+                            <div class="star">
+                                <i class="bx bxs-star checked"></i>
+                                <i class="bx bxs-star checked"></i>
+                                <i class="bx bxs-star checked"></i>
+                                <i class="bx bxs-star checked"></i>
+                                <i class="bx bxs-star checked"></i>
+                            </div>
+                        
+                            <h6>₱5, ₱10 <span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 py-3 py-md-0">
+                    <div class="card">
+                        <div class="overlay">
+                            <button type="button" class="btn btn-secondary" title="Quick View"><i><img src="./image/views.png" alt="" width="30px"></i></button>
+                            <button type="button" class="btn btn-secondary" title="Add to Wishlist"><i><img src="./image/heart.png" alt="" width="30px"></i></button>
+                             <button type="button" class="btn btn-secondary" title="Add to Cart"><i><img src="./image/add.png" alt="" width="30px"></i></button>
+                        </div>
+                        <img src="img8.png"">
+                        <div class="card-body">
+                            <h3>Chili Garlic</h3>
+                            <div class="star">
+                                <i class="bx bxs-star checked"></i>
+                                <i class="bx bxs-star checked"></i>
+                                <i class="bx bxs-star checked"></i>
+                                <i class="bx bxs-star checked"></i>
+                                <i class="bx bxs-star checked"></i>
+                            </div>
+                            <h6>₱100<span><button>Add Cart</button></span></h6>
+                        </div>
+                    </div>
+                </div>
+      <div class="container" id="about"    data-aos="fade-up"
+      data-aos-duration="1500">
+        <h1>ABOUT US</h1>
+        <div class="row">
+            <div class="col-md-6 py-3 py-md-0">
+                <div class="card">
+                    <img src="img7.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-md-6 py-3 py-md-0">
+                    <p>We are the BSIT 1-D STUDENTS, TAGALOG, JERWIN H., ONDIS, THIRDEE C., SANCHEZ, JUSTINE JAMES G. AND ALMEDA, ARCHER MILES M. <br> Welcome to Siomai Rice On The Road, your ultimate destination for all things siomai rice! Our journey began with a simple love for this delicious and comforting Filipino dish. Siomai rice embodies the essence of Filipino street food culture - a delightful combination of savory siomai, fragrant rice, and flavorful sauces that captivate taste buds and bring joy with every bite. <br> At Siomai On The Road, we understand that food is more than just sustenance - it’s a gateway to connection, culture, and community. That’s why we invite you to join us on this gastronomic adventure as we explore the world of siomai rice together. Whether you’re seeking inspiration for your next meal or simply craving a taste of home, let SiomaiRice.com be your trusted companion on your culinary journey. Together, let’s savor the flavors, celebrate the traditions, and spread the joy of siomai rice far and wide. <br> Join us today and discover the endless possibilities that await you at Siomai On The Road!</p>                
+
+                <div id="bt"><button>Read More...</button></div>
+            </div>
+        </div>
+      </div>
+      <div class="container" id="contact"    data-aos="fade-up"
+      data-aos-duration="1500">
+        <h1>CONTACT US</h1>
+        <div class="row">
+            <div class="col-md-4 py-1 py-md-0">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="usr" placeholder="Name">
+                </div>
+            </div>
+            <div class="col-md-4 py-1 py-md-0">
+                <div class="form-group">
+                    <input type="email" class="form-control" id="eml" placeholder="Email">
+                </div>
+            </div>
+            <div class="col-md-4 py-1 py-md-0">
+                <div class="form-group">
+                    <input type="number" class="form-control" id="phn" placeholder="Phone">
+                </div>
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" rows="5" id="comment" placeholder="Message"></textarea>
+        </div>
+        <div id="messagebtn"><button>Send Message</button></div>
+      </div>
+      <!-- contact end -->
+
+
+      <!-- footer -->
+      <footer id="footer"    data-aos="fade-up"
+      data-aos-duration="1500">
+        <h1 class="text-center">Siomai On The Road</h1>
+        <p class="text-center">Ready to experience the mouthwatering goodness of Siomai Rice for yourself? Visit us at NorthVille Cutud Road 1, and treat yourself to a culinary adventure like no other. Whether you're a longtime fan or trying Siomai Rice for the first time, we guarantee you'll be hooked from the very first bite. Come see why Siomai Rice is the ultimate comfort food favorite – we can't wait to serve you!</p>
+        <div class="icons text-center">
+            <i class="bx bxl-twitter"></i>
+            <i class="bx bxl-facebook"></i>
+            <i class="bx bxl-google"></i>
+            <i class="bx bxl-skype"></i>
+            <i class="bx bxl-instagram"></i>
+        </div>
+        <div class="copyright text-center">
+    <strong>Siomai Rice</strong>. All Rights Reserved
+        </div>
+      </footer>
+
+      <a href="#" class="arrow"><i><img src="./image/up-arrow.png" alt="" width="50px"></i></a>
+
+
+
+    </div>
+
+
+
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+      </script>
+</body>
+</html>
